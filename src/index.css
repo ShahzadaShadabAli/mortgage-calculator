@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'jakarta-italic';
+    src: url('../public/assets/fonts/font-i.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'jakarta';
+    src: url('../public/assets/fonts/font.ttf') format('truetype'),
+}
+
+.jakarta {
+    font-family: "jakarta";
+    font-weight: 500;
+}
+
+.jakarta-bold {
+    font-family: "jakarta";
+    font-weight: 700;
+}
+
+.text-lime {
+    color:hsl(61, 70%, 52%);
+}
+
+.border-lime {
+    border-color:hsl(61, 70%, 52%);
+}
+
+.bg-lime {
+    background-color:hsla(61, 70%, 52%, 0.187);
+    border: solid 1.5px hsl(61, 70%, 52%);
+}
+
+.bg-lime-btn {
+    background-color:hsl(61, 70%, 52%);
+}
+
+.lime-border {
+    border: solid 1.5px hsl(61, 70%, 52%);
+    border: solid 1.5px hsl(61, 70%, 52%);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.slate-border {
+    border: solid 1.5px hsl(200, 26%, 54%);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+.form-area:focus-within .input-icon {
+    background-color: hsl(61, 70%, 52%);
+    color: #133040;
+}
+
+.form-area:focus-within {
+    border: solid 1.5px hsl(61, 70%, 52%);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.custom-radio {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    display: none; /* Hide the default radio button */
+}
+
+.radio {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid hsl(0, 0%, 70%);
+    position: relative;
+}
+
+input[type="radio"]:checked + .radio {
+    border-color: hsl(61, 70%, 52%);
+    background-color: hsl(61, 70%, 52%);
+}
+
+.radio::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+input[type="radio"]:checked + .radio::after {
+    opacity: 1;
+}
+
+.error-red {
+    color: hsl(4, 69%, 50%)
+}
+
+.error-bg {
+    background-color: hsl(4, 69%, 50%);
+    color: white
+}
+
+.error-border {
+    border: solid 1.5px hsl(4, 69%, 50%)
+}
+
