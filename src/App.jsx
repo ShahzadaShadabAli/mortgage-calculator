@@ -59,11 +59,12 @@ function calculateTotalInterestOnly(principal, annualInterestRate, termInYears) 
     [{vari: radioChecked, label: "radio"}, {vari: amount, label: "amount"}, {vari: term, label: "term"}, {vari: interestRate, label: "interest"}].forEach(d => {
       if (!d.vari) {
         setError(prev => [...prev, d.label])
-        // errort = true
+        errort = true
       }
     })
-    if (errort) {
+    if (!errort) {
         if (radioChecked === 1) {
+          alert(calculateInterestOnlyMortgage(amount, interestRate))
           setCalculatedVal({monthly: calculateInterestOnlyMortgage(amount, interestRate), total: calculateTotalInterestOnly(amount, interestRate, term)})
         } else {
           setCalculatedVal({monthly: calculateRepaymentMortgage(amount, interestRate, term), total: calculateTotalRepayment(amount, interestRate, term)})
