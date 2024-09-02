@@ -78,19 +78,19 @@ function calculateTotalInterestOnly(principal, annualInterestRate, termInYears) 
         <div className="w-[68rem] bg-white max-md:h-full md:rounded-[30px] grid grid-cols-2 max-md:grid-cols-1">
           <form className="p-10" onSubmit={handleSubmit}>
             <div className="flex justify-between sm:items-center max-sm:flex-col">
-              <h1 className="text-[1.5vw] max-md:text-[1.65rem] jakarta-bold text-[#133040]">
+              <h1 className="text-[1.5vw] max-md:text-[1.65rem] jakarta-bold animate-fade-right text-[#133040]">
                 Mortgage Calculator
               </h1>
-              <h1 className="jakarta underline text-slate-500 cursor-pointer" onClick={handleClear}>
+              <h1 className="jakarta underline text-slate-500 cursor-pointer animate-fade-left" onClick={handleClear}>
                 Clear All
               </h1>
             </div>
             <div className="flex flex-col mt-10 gap-6">
               <div className="space-y-3 ">
-                <label className="text-slate-600 jakarta">
+                <label className="text-slate-600 jakarta animate-fade-right animate-delay-300">
                   Mortgage Amount
                 </label>
-                <div className={`w-full ${error.find(e => e==="amount") ? "error-border" : ""} flex h-[3.25rem] slate-border rounded-[5px] form-area`}>
+                <div className={`w-full animate-fade-right animate-delay-300 ${error.find(e => e==="amount") ? "error-border" : ""} flex h-[3.25rem] slate-border rounded-[5px] form-area`}>
                   <div className={`jakarta-bold ${error.find(e => e==="amount") ? "error-bg" : ""} rounded-tl-[5px] input-icon rounded-bl-[5px] w-12 text-xl bg-[#e3f4fc] text-[#69859a] flex justify-center items-center`}>
                     £
                   </div>
@@ -107,10 +107,10 @@ function calculateTotalInterestOnly(principal, annualInterestRate, termInYears) 
               </div>
               <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-5">
                 <div className="space-y-3 w-full">
-                  <label className="text-slate-600 jakarta">
+                  <label className="text-slate-600 jakarta animate-fade-right animate-delay-300">
                     Mortgage Term
                   </label>
-                  <div className={`w-full ${error.find(e => e==="term") ? "error-border" : ""} flex h-[3.25rem] slate-border rounded-[5px] form-area`}>
+                  <div className={`w-full animate-fade-right ${error.find(e => e==="term") ? "error-border" : ""} flex h-[3.25rem] slate-border rounded-[5px] form-area`}>
                     <input
                     value={term}
                       onInput={(e) => setTerm(e.target.value)}
@@ -126,10 +126,10 @@ function calculateTotalInterestOnly(principal, annualInterestRate, termInYears) 
                   )}
                 </div>
                 <div className="space-y-3 w-full">
-                  <label className="text-slate-600 jakarta">
+                  <label className="text-slate-600 jakarta animate-fade-left animate-delay-300">
                     Interest Rate
                   </label>
-                  <div className={`w-full ${error.find(e => e==="interest") ? "error-border" : ""} flex h-[3.25rem] slate-border rounded-[5px] form-area`}>
+                  <div className={`w-full animate-fade-left ${error.find(e => e==="interest") ? "error-border" : ""} flex h-[3.25rem] slate-border rounded-[5px] form-area`}>
                     <input
                     value={interestRate}
                       onInput={(e) => setInterestRate(e.target.value)}
@@ -146,10 +146,10 @@ function calculateTotalInterestOnly(principal, annualInterestRate, termInYears) 
                 </div>
               </div>
               <div className="space-y-3 ">
-                <label className="text-slate-600 jakarta">Mortgage Type</label>
+                <label className="text-slate-600 jakarta animate-fade-up animate-delay-300">Mortgage Type</label>
                 <div
                   onClick={() => setRadioChecked(2)}
-                  className={`w-full cursor-pointer flex h-[3.25rem]   ${
+                  className={`w-full animate-fade-up cursor-pointer flex h-[3.25rem]   ${
                     radioChecked == 2 ? "bg-lime" : "slate-border"
                   }  rounded-[5px] form-area`}
                 >
@@ -173,7 +173,7 @@ function calculateTotalInterestOnly(principal, annualInterestRate, termInYears) 
                 </div>
                 <div
                   onClick={() => setRadioChecked(1)}
-                  className={`w-full cursor-pointer flex h-[3.25rem] ${
+                  className={`w-full animate-fade-up animate-delay-300 cursor-pointer flex h-[3.25rem] ${
                     radioChecked == 1 ? "bg-lime" : "slate-border"
                   } rounded-[5px] form-area`}
                 >
@@ -202,7 +202,7 @@ function calculateTotalInterestOnly(principal, annualInterestRate, termInYears) 
               <div className="mt-2">
                 <button
                   type="submit"
-                  className="bg-lime-btn rounded-[100px] flex gap-3 justify-center items-center jakarta-bold text-[1.2rem] w-80 h-14"
+                  className="bg-lime-btn animate-fade-down animate-delay-700 rounded-[100px] flex gap-3 justify-center items-center jakarta-bold text-[1.2rem] w-80 h-14"
                 >
                   <img src="/assets/images/icon-calculator.svg" alt="" />
                   Calculate Repayments
@@ -216,13 +216,13 @@ function calculateTotalInterestOnly(principal, annualInterestRate, termInYears) 
                 <div className="flex flex-col items-center">
                   <img
                     src="/assets/images/illustration-empty.svg"
-                    className="w-[192px] h-[192px]"
+                    className="w-[192px] h-[192px] animate-fade-up"
                     alt=""
                   />
-                  <h1 className=" text-[1.4rem] jakarta-bold text-slate-200 my-4">
+                  <h1 className=" text-[1.4rem] jakarta-bold text-slate-200 my-4 animate-fade-up animate-delay-300">
                     Results Shown here
                   </h1>
-                  <p className="jakarta text-lg text-center text-[#69859a]">
+                  <p className="jakarta text-lg text-center text-[#69859a] animate-fade-up animate-delay-600">
                     Complete the form and click "calculate repayments" to <br />{" "}
                     see what your monthly repayments would be.
                   </p>
